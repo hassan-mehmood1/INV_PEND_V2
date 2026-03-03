@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="INV_PEND_V2">
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="-4.21950245696134E-07 -0.0598261359522725 -0.639461511275529"
+        rpy="0 0 0" />
+      <mass
+        value="29.6975303679903" />
+      <inertia
+        ixx="3.37259709125962"
+        ixy="-3.23656588857169E-07"
+        ixz="3.78485310837251E-07"
+        iyy="3.54884144331074"
+        iyz="-3.37709126809899E-06"
+        izz="0.28035879477971" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://INV_PEND_V2/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.650980392156863 0.619607843137255 0.588235294117647 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://INV_PEND_V2/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="link1">
+    <inertial>
+      <origin
+        xyz="4.60738637491727E-17 0.00199999999999959 0.1"
+        rpy="0 0 0" />
+      <mass
+        value="0.203403981871464" />
+      <inertia
+        ixx="0.000829795663478949"
+        ixy="1.0170146893047E-22"
+        ixz="1.56936982166104E-19"
+        iyy="0.000857380807288052"
+        iyz="2.58139713083518E-20"
+        izz="2.78902497819098E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://INV_PEND_V2/meshes/link1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.650980392156863 0.619607843137255 0.588235294117647 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://INV_PEND_V2/meshes/link1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint1"
+    type="revolute">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="link1" />
+    <axis
+      xyz="0 -1 0" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="48"
+      velocity="5" />
+  </joint>
+  <link
+    name="link2">
+    <inertial>
+      <origin
+        xyz="-2.26330040309097E-17 0.00350000000000042 0.15"
+        rpy="0 0 0" />
+      <mass
+        value="0.297699982255464" />
+      <inertia
+        ixx="0.00253318175545494"
+        ixy="-1.24144411957582E-20"
+        ixz="-6.89129937236512E-21"
+        iyy="0.00257326897731495"
+        iyz="-5.86360809497206E-19"
+        izz="4.05337718333978E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://INV_PEND_V2/meshes/link2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.650980392156863 0.619607843137255 0.588235294117647 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://INV_PEND_V2/meshes/link2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint2"
+    type="continuous">
+    <origin
+      xyz="0 0.002 0.2"
+      rpy="0 0 0" />
+    <parent
+      link="link1" />
+    <child
+      link="link2" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="48"
+      velocity="5" />
+  </joint>
+</robot>
